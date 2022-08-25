@@ -1,0 +1,64 @@
+<%- include('header/header.ejs') %>
+<div class="sa">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300" rel="stylesheet">
+
+   <h1><b><center>Todolist</center></b></h1>
+
+
+ <div class="row"> 
+ <div class="col-md-3">
+  <% if(msg != ""){%>
+  <div class="alert alert-success" role="alert">
+    <%= msg %>
+   
+  </div>
+  <%}%>
+ <form method="POST" action="/add">
+  <div class="form-group">
+    <th></th>
+    <label for="list"><b>Todolist</b></label>
+    <input type="text" placeholder="Enter detail" class="form-control " name="Todolist" id="list">
+  </div>
+  <br>
+  
+  
+<br>
+<button type="submit" class="btn button-add">Submit</button>
+  
+     </form>
+   </div> 
+   
+  <table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Todolist</th>
+        <th>Status</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <% for(var i=0;i<name.length; i++){ %>
+      <tr>
+        <td></td>
+        <td><%= name[i].Todolist %></td>
+        <td><%= name[i].status %></td>
+         
+       
+        <td>
+          <a href="/update/<%= i%>" class="btn btn-info">Update</a>
+          <a href="/delete/<%= i%>"  class="btn btn-warning">Delete</a>
+        </td>
+
+      </tr>
+      <% } %>
+        
+    </tbody>
+  </table>
+   </div>
+</div>
+  </div>
+
+</div>
+</div>
+<%- include('footer/footer.ejs') %>

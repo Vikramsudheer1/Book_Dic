@@ -1,0 +1,11 @@
+<%- include('header/header.ejs') %>
+<form method="post" action="/update/<%= id %>">
+    <label>Todolist</label>
+    <input type="text" name="Todolist" value="<%= todo.Todolist%>">
+    <br>
+    <label>status</label>
+    <input type="text" name="status" value="<%= todo.status%>">
+    <br><br>
+    <input type="submit" class="btn btn-dark">
+</form>
+<%- include('footer/footer.ejs') %>
